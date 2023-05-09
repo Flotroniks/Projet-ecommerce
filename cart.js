@@ -1,10 +1,11 @@
+import COLORS from './colors.js';
 import {footer} from './js/module/footer.js';
 import { navbar } from './js/module/navbar.js';
 //write hello world to the body
 let body = document.querySelector('body');
 //add a black nav bar to the top of the page with the text "Hello World" and a height of 100px
 
-body.appendChild(navbar());
+body.appendChild(navbar(COLORS));
 //add a footer to the bottom of the page
 body.appendChild(footer());
 
@@ -106,8 +107,20 @@ priceBox.appendChild(pricer);
 const purchaseButton = document.createElement('div');
 purchaseButton.style.width = '80%';
 purchaseButton.style.height = '50px';
-purchaseButton.style.backgroundColor = 'black';
-purchaseButton.style.color = 'white';
+purchaseButton.style.backgroundColor = "white";
+purchaseButton.style.color = COLORS.text;
+//add a border to the button
+purchaseButton.style.border = '2px solid ' + COLORS.primary;
+
+//invers the color of the button when the mouse is on it and when it is not reset the color
+purchaseButton.addEventListener('mouseover', function() {
+    purchaseButton.style.backgroundColor = COLORS.primary;
+    purchaseButton.style.color = COLORS.text    ;
+});
+purchaseButton.addEventListener('mouseout', function() {
+    purchaseButton.style.backgroundColor = "white";
+    purchaseButton.style.color = COLORS.text;
+});
 purchaseButton.style.textAlign = 'center';
 purchaseButton.style.padding = '8px';
 purchaseButton.style.margin = '10px';

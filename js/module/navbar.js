@@ -1,5 +1,6 @@
 
 export function navbar() {
+    
     const nav = document.createElement('nav');
     nav.style.height = '50px';
     nav.style.backgroundColor = 'black';
